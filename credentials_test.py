@@ -17,5 +17,13 @@ class TestCredentials(unittest.TestCase):
         self.new_user.save_user()
         userX= User('Ian','Sani','SaniBoy')
         userX.save_user()
-        active_user = Credential.test_confirm_user('Ian','SaniBoy')
+        active_user = Credential.confirm_user('Ian','SaniBoy')
         self.assertTRue(active_user)
+
+    def setUp(self):
+        """
+        Function to create social media account credentials before each test
+        """
+        self.new_credential = Credential('Ian','facebook','Iansani','sani254')
+
+        
