@@ -52,3 +52,8 @@ class Credential:
         """
         Method that accepts social media name and returns credentials matching
         """
+        for credential in cls.credentials_list:
+            if credential.social_media == social_media:
+                return credential
+
+    
