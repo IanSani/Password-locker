@@ -49,4 +49,12 @@ class TestCredentials(unittest.TestCase):
         facebook.save_credentials()
         self.asserEqual(Credential.display_credentials(),Credential.credential_list)
 
-    
+    def test_search_social_media(self):
+        """
+        Test to confirm if the method returns the correct social media credential
+        """
+        self.new_credential.save_credentials()
+        facebook = Credential('Ian','facebook','Iansani','sani254')
+        facebook.save_credentials()
+        credential_exist = Credential.search_social_media('Facebook')
+        self.assertEqual(credential_exists,facebook)
