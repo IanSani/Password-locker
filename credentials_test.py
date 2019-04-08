@@ -39,3 +39,14 @@ class TestCredentials(unittest.TestCase):
         """
         User.users_list =[]
         Credential.credentials_list = []
+
+    def test_display_credentials(self):
+        """
+        Test to confirm user can view the correct credential details
+        """
+        self.new_credential.save_credentials()
+        facebook = Credential('Ian','facebook','Iansani','sani254')
+        facebook.save_credentials()
+        self.asserEqual(Credential.display_credentials(),Credential.credential_list)
+
+    
