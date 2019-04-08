@@ -8,3 +8,14 @@ class TestCredentials(unittest.TestCase):
     Args:
         unittest.TestCase: TestCase class that helps create test cases
     """
+
+    def test_confirm_user(self):
+        """
+        Function to confirm login details to active users
+        """
+        self.new_user = User('Ian','Sani','SaniBoy')
+        self.new_user.save_user()
+        userX= User('Ian','Sani','SaniBoy')
+        userX.save_user()
+        active_user = Credential.test_confirm_user('Ian','SaniBoy')
+        self.assertTRue(active_user)
