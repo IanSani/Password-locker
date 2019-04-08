@@ -27,4 +27,15 @@ class Credential:
         self.user_name =user_name
         self.social_media = search_social_media
         self.account_name = account_name
-        self.password = password 
+        self.password = password
+
+    def generate _password():
+        """
+        Function to generate random passwords for social media accounts
+        """
+        pwchar = string.printable
+        length = int(input("Enter password length needed:"))
+        gen_pwd=''
+        for char in range(length):
+            gen_pwd += random.choice(pwchar)
+        return gen_pwd
