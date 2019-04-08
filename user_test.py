@@ -6,5 +6,5 @@ def test_save_user(self):
     self.new_user.save_user() #saving the new contact
     self.asserEqual(len(user.user_list),1)
 
-    if _name_ == '_main_':
-        unittest.main()
+if _name_ == '_main_':
+    unittest.main()
