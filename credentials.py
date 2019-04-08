@@ -39,3 +39,16 @@ class Credential:
         for char in range(length):
             gen_pwd += random.choice(pwchar)
         return gen_pwd
+
+    @classmethod
+    def display_credentials(cls):
+        """
+        Class method to display the list of saved credentials
+        """
+        return cls.credentials_list
+
+    @classmethod
+    def search_social_media(cls,social media):
+        """
+        Method that accepts social media name and returns credentials matching
+        """
