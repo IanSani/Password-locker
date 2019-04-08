@@ -8,6 +8,20 @@ class Testuser(unittest.TestCase):
     Args:
         unittest.TestCase: TestCase class that helps create test cases
     """
+
+def setUp(self):
+    """
+    Function to help create user account details before each test
+    """
+    self.new_user = user('Ian','Sani','SaniBoy')
+
+def test_init_(self):
+    """
+    Test to check creation of new user instances
+    """
+    self.assertEqual(self.new_user.first_name,'Ian')
+    self.assertEqual(self.new_user.last_name,'Sani')
+    self.assertEqual(self.new_user.password,'SaniBoy')
     
 def test_save_user(self):
     """
