@@ -1,6 +1,6 @@
 import pyperclip
-from user import users
-from credentials import credentials
+from user import User
+from credentials import Credential
 
 def create_user(firstname,lastname,password):
     '''
@@ -82,7 +82,7 @@ def main():
 			user_name = input('Enter your first name - ').strip()
 			password = str(input('Enter your password - '))
 			user_exists = authenticate_user(user_name,password)
-			if user_exists == user_name:
+			if user_name==user_name and password==password:
 				print(" ")
 				print(f'Welcome {user_name}. Please choose an option to continue.')
 				print(' ')
@@ -149,9 +149,6 @@ def main():
 			print("-"*70)
 			print(' ')
 			print('Sorry! Incorrect option entered. Try again.')
-
-
-
 
 
 

@@ -1,6 +1,6 @@
 import unittest #Importing the unittest module
 import pyperclip #Helps in copy and paste functions
-from user import User # importing the user class
+from user import user # importing the user class
 
 class Testuser(unittest.TestCase):
     """
@@ -30,6 +30,14 @@ class Testuser(unittest.TestCase):
         """
         self.new_user.save_user() #saving the new contact
         self.assertEqual(len(User.users_list),1)
+
+    def test_save_multiple_user(self):
+        """
+        test_save_multiple_user to check if we can save multiple users
+        objects to our users_list
+        """
+        self.new_user.save_user()
+        test_User = User("Test","")
 
 if __name__ == '__main__':
     unittest.main()
