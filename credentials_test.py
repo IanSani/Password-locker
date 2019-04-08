@@ -26,4 +26,11 @@ class TestCredentials(unittest.TestCase):
         """
         self.new_credential = Credential('Ian','facebook','Iansani','sani254')
 
+    def test_save_credentials(self):
+        """
+        Test and confrim that the new credential information is being saved
+        """
+        self.new_credential.save_credentials()
+        self.assertEqual(len(Credential.credentials_list),1)
+
         
