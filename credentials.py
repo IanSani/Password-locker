@@ -56,4 +56,10 @@ class Credential:
             if credential.social_media == social_media:
                 return credential
 
-    
+    @classmethod
+    def copy_password(cls,social_media):
+        """
+        Class method that copies a credential`s password of a specific social media site after the credential`s is entered
+        """
+        collect_pass = Credential.search_social_media(search_social_media)
+        return pyperclip.copy(collect_pass.password)
